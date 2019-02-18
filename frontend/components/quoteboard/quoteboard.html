@@ -1,0 +1,46 @@
+<br>
+
+<div class="row">
+  <div class="container">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">My quoteboard</div>
+      <div class="panel-body">
+        <form class="form-inline">
+          <input
+            class="form-control"
+            type="text"
+            ng-model="vm.newSymbol">
+          <button 
+            class="btn btn-default" 
+            ng-disabled="!vm.newSymbol" 
+            ng-click="vm.addSymbol()">
+            Add Symbol
+          </button>
+        </form>
+      </div>
+    
+      <!-- Table -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Last</th>
+            <th>Change</th>
+            <th>Open</th>
+            <th>Volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in vm.rows">
+            <td>{{row.symbol}}</td>
+            <td>{{row.last}}</td>
+            <td>{{row.change}}</td>
+            <td>{{row.open}}</td>
+            <td>{{row.volume}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
